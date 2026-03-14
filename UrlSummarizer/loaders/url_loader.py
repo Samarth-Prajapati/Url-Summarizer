@@ -7,7 +7,7 @@ class UrlLoader:
         self.loader = None
         self.language = ["gu", "hi", "en"]
         self.headers = {
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 Chrome/120 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
         }
         self.docs = None
 
@@ -36,6 +36,9 @@ class UrlLoader:
                     headers = self.headers
                 )
 
+            if self.loader is None:
+                raise ValueError("Failed to create loader for the provided URL")
+
         except Exception as error:
             print(error)
 
@@ -49,6 +52,10 @@ class UrlLoader:
 
         try:
             self.docs = self.loader.load()
+            if not self.docs:
+                print("No content extracted from URL")
+                return None
+
             return self.docs
 
         except Exception as error:
