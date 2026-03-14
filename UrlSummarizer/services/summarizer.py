@@ -41,6 +41,6 @@ class Summarizer:
             return self.chain
 
         except Exception as error:
-            print(error)
+            raise error
 
 summarizer = Summarizer()
