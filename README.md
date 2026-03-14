@@ -197,3 +197,5 @@ https://example.com/blog/article
 
 ---
 
+Deployment Link - https://url-summarizer-app.streamlit.app/
+
