@@ -59,6 +59,6 @@ class UrlLoader:
             return self.docs
 
         except Exception as error:
-            print(error)
+            raise error
 
 loader = UrlLoader()
