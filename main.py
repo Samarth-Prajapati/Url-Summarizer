@@ -56,6 +56,10 @@ class StreamlitSummarizer:
                 try:
                     with st.spinner("Analyzing URL and generating summary..."):     # type: ignore
                         self.docs = loader.load_url(self.generic_url)
+                        if not self.docs:
+                            st.error("Unable to extract content from this URL. Try another website.")
+                            st.stop()
+
                         self.chain = summarizer.create_chain(self.groq_api_key, prompt)
 
                         st.info("Generating summary")
