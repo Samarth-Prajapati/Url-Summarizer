@@ -1,9 +1,13 @@
+streamlit
 validators
 youtube-transcript-api
-streamlit
+pytube
 langchain
 langchain-community
 langchain-core
 langchain-groq
 unstructured
-pytube
+beautifulsoup4
+lxml
+requests
+langchain-classic
