@@ -34,6 +34,6 @@ class SummaryPrompt:
             return self.prompt_template
 
         except Exception as error:
-            print(error)
+            raise error
 
 prompt = SummaryPrompt().system_prompt()
